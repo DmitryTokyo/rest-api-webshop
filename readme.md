@@ -1,5 +1,5 @@
 # REST API for webshop
-This application provides the handler for saving, fetching and managing order data to and from database.
+This application provides the handler for saving, fetching and managing order data to and from database. It is a test of python web developer vacancy.
 
 ## Get started
 For start this application you should be installed following requirements:
