@@ -3,13 +3,13 @@ This application provides the handler for saving, fetching and managing order da
 
 ## Get started
 For start this application you should be installed following requirements:
-- Programming language is [Python 3.8.5](https://www.python.org/downloads/release/python-385/).
+- Programming language is [Python 3.10.0](https://www.python.org/downloads/release/python-3100/).
 - All dependencies install from `pip install -r requirements.txt`.
 
-Declare default environment variables in .env file:
+Declare default environment variables in .env file. Read more in [django-environ](https://django-environ.readthedocs.io/en/latest/):
 - SECRET_KEY - secret key for a particular Django installation.
 - DEBUG - debug mode.
-- DATABASE_URL - Django database connection dictionary, populated with all the data specified in your URL. For more information please read the [DJ-Database-URL documentation](https://github.com/jacobian/dj-database-url).
+- DATABASE_URL - Django database connection dictionary, populated with all the data specified in your URL.
 
 ## How to use
 Before run the application it recommended to install the virtual environment. In Linux it can be doing like this:
