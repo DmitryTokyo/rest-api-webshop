@@ -1,1 +1,4 @@
 venv
+/.envrc
+.idea/**
+/db.sqlite3
