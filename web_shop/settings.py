@@ -11,8 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY', default='my_secret_key')
 
 DEBUG = env('DEBUG')
-print(DEBUG)
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = env('ALLOWED_HOSTS', default=['127.0.0.1'])
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
