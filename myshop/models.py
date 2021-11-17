@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -13,7 +15,10 @@ class Product(models.Model):
         verbose_name_plural = 'products'
 
     def __str__(self):
-        return self.title 
+        return self.title
+
+    def get_discount_price(self):
+        return self.price * Decimal(0.8)
     
 
 class Order(models.Model):
@@ -30,9 +35,9 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    product = models.ForeignKey(Product, verbose_name='Product', on_delete=models.CASCADE, related_name='order_products')
+    product = models.ForeignKey(Product, verbose_name='Product', on_delete=models.CASCADE, related_name='order_items')
     quantity = models.IntegerField('Quantity')
-    order = models.ForeignKey(Order, verbose_name='Order', on_delete=models.CASCADE, related_name='products')
+    order = models.ForeignKey(Order, verbose_name='Order', on_delete=models.CASCADE, related_name='order_items')
 
     class Meta:
         verbose_name = 'order item'
