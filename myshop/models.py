@@ -46,6 +46,12 @@ class OrderItem(models.Model):
     def __str__(self):
         return self.product.title
 
+
+class Shop(models.Model):
+    title = models.CharField('Title', max_length=100)
+    address = models.CharField('Address', max_length=200)
+    product = models.ManyToManyField(Product, verbose_name='Product', related_name='shops')
+
     
 
     
