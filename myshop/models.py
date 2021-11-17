@@ -9,8 +9,8 @@ class Product(models.Model):
     price = models.DecimalField('Price', max_digits=8, decimal_places=2)
 
     class Meta:
-        verbose_name = ("product")
-        verbose_name_plural = ("products")
+        verbose_name = 'product'
+        verbose_name_plural = 'products'
 
     def __str__(self):
         return self.title 
@@ -22,11 +22,11 @@ class Order(models.Model):
     country_id = models.IntegerField('Country ID', null=True)
 
     class Meta:
-        verbose_name = ("order")
-        verbose_name_plural = ("orders")
+        verbose_name = 'order'
+        verbose_name_plural = 'orders'
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 
 class OrderItem(models.Model):
@@ -35,8 +35,8 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, verbose_name='Order', on_delete=models.CASCADE, related_name='products')
 
     class Meta:
-        verbose_name = ("order item")
-        verbose_name_plural = ("order itemss")
+        verbose_name = 'order item'
+        verbose_name_plural = 'order items'
 
     def __str__(self):
         return self.product.title
