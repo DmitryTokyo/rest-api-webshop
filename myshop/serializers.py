@@ -40,6 +40,9 @@ class OrderSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    sales_price = serializers.DecimalField(max_digits=8, decimal_places=2, source='price')
+    discount_price = serializers.DecimalField(max_digits=8, decimal_places=2, source='get_discount_price')
+
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ['title', 'sales_price', 'discount_price']
