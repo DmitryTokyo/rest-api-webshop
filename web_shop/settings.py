@@ -16,6 +16,7 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS', default=['127.0.0.1'])
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
+SHELL_PLUS_PRINT_SQL = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
