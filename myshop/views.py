@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import generics
 from myshop.serializers import OrderSerializer, ProductSerializer
 from myshop.models import Product, Order
