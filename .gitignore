@@ -2,3 +2,4 @@ venv
 /.envrc
 .idea/**
 /db.sqlite3
+/dev.env
