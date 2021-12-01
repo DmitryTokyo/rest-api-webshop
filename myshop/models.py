@@ -7,7 +7,8 @@ User = get_user_model()
 
 
 class Product(models.Model):
-    title = models.CharField('Product', max_length=100)
+    title = models.CharField('Title', max_length=100)
+    description = models.TextField('Description', null=True, blank=True)
     price = models.DecimalField('Price', max_digits=8, decimal_places=2)
 
     class Meta:
@@ -50,7 +51,11 @@ class OrderItem(models.Model):
 class Shop(models.Model):
     title = models.CharField('Title', max_length=100)
     address = models.CharField('Address', max_length=200)
-    product = models.ManyToManyField(Product, verbose_name='Product', related_name='shops')
+    products = models.ManyToManyField(Product, verbose_name='Product', related_name='shops', null=True, blank=True)
+    is_official_reseller = models.BooleanField('Is official reseller', default=False)
+
+    def __str__(self):
+        return self.title
 
     
 
