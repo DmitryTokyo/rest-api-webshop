@@ -61,6 +61,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'web_shop.wsgi.application'
 
 
+SHELL_PLUS_IMPORTS = [
+    'from myshop.serializers import OrderSerializer, ProductSerializer, ProductModelSerializer',
+    'from rest_framework.parsers import JSONParser',
+    'from rest_framework.renderers import JSONRenderer',
+    'import io',
+]
+
+
 DATABASES = {"default": env.db_url('DATABASE_URL', default='sqlite:///db.sqlite3')}
 
 
