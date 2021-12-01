@@ -1,11 +1,23 @@
 from rest_framework import serializers
-from myshop.models import Product, Order, OrderItem
+from myshop.models import Product, Order, OrderItem, Shop
 
 
 class OrderItemsSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
         fields = ['id', 'product', 'quantity']
+
+
+class ShopSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Shop
+        fields = ['id', 'title', 'address']
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        if instance.is_official_reseller:
+            representation['official_reseller'] = True
+        return representation
 
 
 class OrderSerializer(serializers.ModelSerializer):
